@@ -13,48 +13,39 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 var Schema = mongoose.Schema;
 
 // create a schema
-var userSchema = new Schema({
+var myproduct = new Schema({
   name: String,
-  username: { type: String, required: true },
-  password: { type: String, required: true },
-  admin: Boolean,
-  location: String,
-  meta: {
-    age: Number,
-    website: String
-  },
-  created_at: Date,
-  updated_at: Date
+  productdescription: { type: String, required: true },
+ 
 });
 
 // the schema is useless so far
 // we need to create a model using it
-var Team = mongoose.model('team', userSchema);
+var MyProduct = mongoose.model('myproduct', myproduct);
 
 // make this available to our users in our Node applications
 //module.exports = User;
 // create a new user
-var newUser = Team({
-    name: 'raj',
-    username: 'abhi123',
-    password: 'password',
-    admin: true
+var newProduct = MyProduct({
+    name: 'addidas',
+    productdescription: 'addidas sports',
+    
   });
 
   // save the user
-newUser.save(function(err) {
+  newProduct.save(function(err) {
     if (err) throw err;
   
-    console.log('User created!');
+    console.log('Product Created!');
   });
 
-  // get all the users
-  Team.find({}, function(err, users) {
-  if (err) throw err;
+//   // get all the users
+//   Team.find({}, function(err, users) {
+//   if (err) throw err;
 
-  // object of all the users
-  console.log(users);
-});
+//   // object of all the users
+//   console.log(users);
+// });
 
 // // get the user starlord55
 // User.find({ username: 'starlord55' }, function(err, user) {
