@@ -19,11 +19,11 @@ MongoClient.connect(url, (err, client) => {
 app.get('/hello', (req, res) => {
    //alert('hello')
    
-   db.collection('product').find().toArray(function(err, results) {
-    console.log(results[0].productname)
+   db.collection('custumer').find().toArray(function(err, results) {
+    console.log(results[0])
     // send HTML file populated with quotes here
     //res.send(results[0].productname)
-    res.json({"product":results[2].productname})
+ 
   })
     
   })

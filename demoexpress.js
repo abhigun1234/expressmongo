@@ -10,3 +10,7 @@ app.get('/hello',function(req,res)
 
     res.send("hello world")
 })
+app.post('senddata',function(req,res)
+{
+ req.
+})

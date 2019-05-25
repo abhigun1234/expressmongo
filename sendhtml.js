@@ -1,3 +1,5 @@
+console.log(__dirname)
+
 var express =require('express')
 var app=express()
 var path=require('path')
@@ -8,13 +10,13 @@ app.listen(1337,function(){
 app.get('/servehtml',function(req,res){
 
 
-    res.sendFile('index.html',{root: path.join(__dirname,'./files')})
+   // res.sendFile('index.html',{root: path.join(__dirname,'./files')})
    
     //connectToDb()
     // console.log(data)
     // res.contentType('application/json');
     // //res.send(data)
-    // res.send("hello world")
+ res.send("hello world")
 })
 app.get('/hello',function(req,res)
 {
